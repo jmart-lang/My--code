@@ -6,6 +6,7 @@ Vidim da si nalozil mojo igro, tako da imam zate samo se nekaj navodil:
 - nalozis jo tako, da v terminal vtipkas naslednji ukaz: pip install pygame
 - terminal odpres tako, da pritisnes tipki Win + R in v okence, ki se pojavi vtipkas cmd in pritisnes tipko Enter
 - prav tako moras naloziti Python IDLE, ki ga lahko nalozis na spletni strani: https://www.python.org/downloads/
+- ko to koncas, odpri mapo LABinnit in dvakrat klikni na datoteka main.py
 
 ----------------------------------------------------------------------------------------------------------------------------
 
