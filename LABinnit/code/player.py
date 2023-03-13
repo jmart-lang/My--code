@@ -6,6 +6,14 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(script_dir, '..', 'graphics', 'test',
 'Theseus_right.png')
+image_path2 = os.path.join(script_dir, '..', 'graphics', 'test',
+'Theseus_left.png')
+image_path3 = os.path.join(script_dir, '..', 'graphics', 'test',
+'Theseus_up.png')
+image_path4 = os.path.join(script_dir, '..', 'graphics', 'test',
+'Theseus_down.png')
+script_dir2 = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir2, '..', 'code', 'endcredits.py')
 
 # ustvarimo nov class
 # ta program sem skopiral iz tile.py, vse kar rabim narediti je samo spremeniti ime classa in pa popraviti nekaj manjsih zadev
@@ -42,20 +50,26 @@ class Player(pygame.sprite.Sprite):
         # vse tipke, ki so pritisnjene na tipkovnici
         keys = pygame.key.get_pressed()
         # ce pritisnem puscico ki kaze gor/dol, se bo lik premaknil gor/dol
+        # dodal sem moznost, da se spreminja slika igralcevega lika, glede na to, katero tipko pritisne
         if keys[pygame.K_UP]:
             self.direction.y = -1
+            self.image = pygame.image.load(image_path3).convert_alpha()
         elif keys[pygame.K_DOWN]:
             self.direction.y = 1
+            self.image = pygame.image.load(image_path4).convert_alpha()
         # ce ne dodamo tega else, bi se lik premikal naprej
         else:
             self.direction.y = 0
 
         # ce pritisnem puscico ki kaze desno/levo, se bo lik premaknil desno/levo
         # treba je spremeniti direction iz y v x in dodati vrednosti
+        # dodal sem moznost, da se spreminja slika igralcevega lika, glede na to, katero tipko pritisne
         if keys[pygame.K_RIGHT]:
             self.direction.x = 1
+            self.image = pygame.image.load(image_path).convert_alpha()
         elif keys[pygame.K_LEFT]:
             self.direction.x = -1
+            self.image = pygame.image.load(image_path2).convert_alpha()
         # ce ne dodamo tega else, bi se lik premikal naprej
         else:
             self.direction.x = 0
@@ -97,7 +111,7 @@ class Player(pygame.sprite.Sprite):
             for sprite in self.portal_sprites:
                         if sprite.hitbox.colliderect(self.hitbox):
                             pygame.display.quit() # zaprem pygame display window
-                            os.system('C:\\Users\\jurij\\OneDrive\\Desktop\\LABinnit\\code\\endcredits.py') # zazenem datoteko endcredits.py
+                            os.system(file_path) # zazenem datoteko endcredits.py
                             quit() 
 
         # ce je smer vertikalna
@@ -117,7 +131,7 @@ class Player(pygame.sprite.Sprite):
             for sprite in self.portal_sprites:
                         if sprite.hitbox.colliderect(self.hitbox):
                             pygame.display.quit() # zaprem pygame display window
-                            os.system('C:\\Users\\jurij\\OneDrive\\Desktop\\LABinnit\\code\\endcredits.py') # zazenem datoteko endcredits.py
+                            os.system(file_path) # zazenem datoteko endcredits.py
                             quit()
                             
 

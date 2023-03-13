@@ -6,6 +6,8 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(script_dir, '..', 'graphics', 'test',
 'background_2.png')
+script_dir2 = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir2, '..', 'code', 'main.py',)
 
 # zazene pygame
 pygame.init()
@@ -17,7 +19,7 @@ WHITE = (255, 255, 255)
 # ta del kode naredi ekrancek, z WINDOE_SIZE dolocim dimenzije okvircka
 WINDOW_SIZE = (500, 500)
 screen = pygame.display.set_mode(WINDOW_SIZE)
-pygame.display.set_caption("Game Options")
+pygame.display.set_caption("LABinnit")
 
 # s tem ustvarim enega izmed gummbov, tistega, ki bo kasneje dal moznost, da gre igralec se enkrat igrati
 play_again_button_rect = pygame.Rect(90, 250, 150, 50)
@@ -50,7 +52,7 @@ while running:
             # ce je igralec pritisnil na gumb za ponovno igro, se bo zgodilo kar je napisano spodaj:
             # napisano je, da naj zazene drugo datoteko (main.py, ki je glavna datoteka te igrice in tudi tista, ki vse zacne), nato pa zapre okvircek
             if play_again_button_rect.collidepoint(event.pos):
-                p = subprocess.Popen('C:\\Users\\jurij\\OneDrive\\Desktop\\LABinnit\\code\\main.py', shell=True)
+                p = subprocess.Popen(file_path, shell=True)
                 pygame.quit()
                 p.wait() # cakam, da se proces konca
                 p.kill() # hotel sem, da se, ko igralec nekaj pritisne, zapre tudi terminal --> ni mi uspelo

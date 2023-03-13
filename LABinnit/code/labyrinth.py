@@ -265,6 +265,12 @@ for i in range(0, width):
 		maze[1][i] = 'p'
 		break
 
+# funkcija za lazji izhod
+#for i in range(0, width):
+        #if (maze[1][i] == ' '):
+            #maze[0][i] = ' '
+            #break
+
 
 # tukaj nastavim listo WORLD_MAP, da naj bo enaka generiranemu labirintu
 WORLD_MAP = maze
