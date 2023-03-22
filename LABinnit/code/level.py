@@ -4,6 +4,7 @@ from labyrinth import *
 from tile import Tile  
 from player import Player
 from portal import Portal
+from floor import Floor
 
 class Level: 
     def __init__(self):
@@ -40,6 +41,8 @@ class Level:
                 # dodati moram se sprite, ki bo, ko se ga igralec dotakne, koncal igro
                 if col == 's':
                     Portal((x,y),[self.visible_sprites,self.portal_sprites])
+                #if col == ' ':
+                    #Floor ((x,y),[self.visible_sprites])
 
     def run(self):
         # hocem, da se igra obnavlja in prikazuje

@@ -7,7 +7,13 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(script_dir, '..', 'graphics', 'test',
 'background_2.png')
 script_dir2 = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(script_dir2, '..', 'code', 'main.py',)
+image_path2 = os.path.join(script_dir2, '..', 'graphics', 'test',
+'button.png')
+script_dir3 = os.path.dirname(os.path.abspath(__file__))
+image_path3 = os.path.join(script_dir3, '..', 'graphics', 'test',
+'button2.png')
+script_dir4 = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir4, '..', 'code', 'main.py',)
 
 # zazene pygame
 pygame.init()
@@ -22,22 +28,30 @@ screen = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption("LABinnit")
 
 # s tem ustvarim enega izmed gummbov, tistega, ki bo kasneje dal moznost, da gre igralec se enkrat igrati
-play_again_button_rect = pygame.Rect(90, 250, 150, 50)
-play_again_button_color = WHITE
+replay_button_surface = pygame.Surface((200, 50))
+replay_button_surface.set_alpha(0)
+replay_button_surface.fill((0,0,0))
+replay_button_rect = replay_button_surface.get_rect(center=(25, 250))
+
 
 # s tem gumbom bo igralec ixsel iz igrice
-quit_button_rect = pygame.Rect(260, 250, 150, 50)
-quit_button_color = WHITE
+quit_button_surface = pygame.Surface((200, 50))
+quit_button_surface.set_alpha(0)
+quit_button_surface.fill((0,0,0))
+quit_button_rect = quit_button_surface.get_rect(center=(275, 250))
+
 
 # tukaj dolocim font pisave (v resnici sem dolocil samo velikost)
 font = pygame.font.Font(None, 36)
 
 # tukaj si lahko izberem, kaj bom prikazal na gumbu, ta del kode pa bo to prikazal na povrsini od gumba
-play_again_text = font.render("Še enkrat", True, BLACK)
-quit_text = font.render("Konec", True, BLACK)
+play_again_text = font.render("Še enkrat", True, WHITE)
+quit_text = font.render("Konec", True, WHITE)
 
 # s tem delom kode dodam sliko za ozadje, ki se bo prikazovala
 background_image = pygame.image.load(image_path).convert_alpha()
+button_image = pygame.image.load(image_path2).convert_alpha()
+button_image2 = pygame.image.load(image_path3).convert_alpha()
 
 # tukaj je loop, to tece dokler igralec ne izbere ene izmed opcij
 running = True
@@ -51,7 +65,7 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             # ce je igralec pritisnil na gumb za ponovno igro, se bo zgodilo kar je napisano spodaj:
             # napisano je, da naj zazene drugo datoteko (main.py, ki je glavna datoteka te igrice in tudi tista, ki vse zacne), nato pa zapre okvircek
-            if play_again_button_rect.collidepoint(event.pos):
+            if replay_button_rect.collidepoint(event.pos):
                 p = subprocess.Popen(file_path, shell=True)
                 pygame.quit()
                 p.wait() # cakam, da se proces konca
@@ -66,15 +80,17 @@ while running:
                 
     # narise sliko za ozadje v okvircek
     screen.blit(background_image, (0, 0))
+    screen.blit(button_image, (275, 250))
+    screen.blit(button_image2, (25, 250))
 
     # prikaze gumbe
-    pygame.draw.rect(screen, play_again_button_color, play_again_button_rect)
-    pygame.draw.rect(screen, quit_button_color, quit_button_rect)
+    screen.blit(replay_button_surface, replay_button_rect)
+    screen.blit(quit_button_surface, quit_button_rect)
 
     # napise besedilo na povrsino gumbov
-    screen.blit(play_again_text, (play_again_button_rect.centerx - play_again_text.get_width() // 2,
+    screen.blit(play_again_text, (replay_button_rect.centerx - play_again_text.get_width() // 2 + 100,
                                     258))
-    screen.blit(quit_text, (quit_button_rect.centerx - quit_text.get_width() // 2,
+    screen.blit(quit_text, (quit_button_rect.centerx - quit_text.get_width() // 2 + 100,
                             258))
 
     # posodablja display - vidimo kam premikamo misko
