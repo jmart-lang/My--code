@@ -6,7 +6,7 @@ HEIGTH   = 1080
 FPS      = 60
 TILESIZE = 64
 
-#vsakemu delu te liste moramo dodati koordinate, to naredimo z create map v datoteki level
+#vsakemu delu te liste moram dodati koordinate, to naredim s create map v datoteki level
 
 #odspodaj je primer, kako lahko izgleda generiran zemljevid
 # WORLD_MAP = [

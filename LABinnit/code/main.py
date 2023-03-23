@@ -17,7 +17,7 @@ class Game:
 		self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
 		#poimenuje okence LABinnit
 		pygame.display.set_caption('LABinnit')
-		#ustvarimo uro
+		#ustvarim uro
 		self.clock = pygame.time.Clock()
 		
 		self.level = Level()
@@ -33,14 +33,14 @@ class Game:
 					pygame.quit()
 					sys.exit()
 
-			#zaslon nastavimo na izbrano barvo
+			#zaslon nastavim na izbrano barvo
 			self.screen.fill(colour)
 
-			#zazenemo class level v tem loopu
+			#zazenem class level v tem loopu
 			self.level.run()
 			#posodablja zaslon
 			pygame.display.update()
-			#nadzorujemo FPS
+			#nadzorujem FPS
 			self.clock.tick(FPS)
 
 #preveri, ce je to glavna datoteka

@@ -35,7 +35,7 @@ replay_button_rect = replay_button_surface.get_rect(center=(25, 250))
 
 
 # s tem gumbom bo igralec ixsel iz igrice
-quit_button_surface = pygame.Surface((200, 50))
+quit_button_surface = pygame.Surface((200, 200))
 quit_button_surface.set_alpha(0)
 quit_button_surface.fill((0,0,0))
 quit_button_rect = quit_button_surface.get_rect(center=(275, 250))
@@ -74,8 +74,7 @@ while running:
             # preveri, ce je bil pritisnjen gumb za izhod:
             # ce je bil ugasne igrico
             elif quit_button_rect.collidepoint(event.pos):
-                pygame.quit()
-                exit()
+                running = False
                 
                 
     # narise sliko za ozadje v okvircek

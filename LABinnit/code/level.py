@@ -4,12 +4,12 @@ from labyrinth import *
 from tile import Tile  
 from player import Player
 from portal import Portal
-from floor import Floor
+#from floor import Floor
 
 class Level: 
     def __init__(self):
 
-        # Dobimo povrsino prikaza
+        # Dobim povrsino prikaza
         self.display_surface = pygame.display.get_surface()
 
         # naredim prvo skupino za sprite
@@ -21,21 +21,21 @@ class Level:
         # vzpostavitev sprita
         self.create_map()
 
-    # naredili bomo novo funkcijo, s katero bomo ustvarili mapo
+    # naredil bom novo funkcijo, s katero bom prikazoval labirint
     def create_map(self):
         # za vsako vrsto 
         for row_index,row in enumerate(WORLD_MAP):
-            # zdej imamo pozicijo (navpicno) od vsake vrste tilov = dobimo y koordinato
-            #  s tem for loopom sem sel cez vsako vrstico, s spodnjim pa se cez vsak x ali pa presledek v tej vrstici - gremo cez cel zemljevid
+            # zdej imam pozicijo (navpicno) od vsake vrste tilov = dobim y koordinato
+            #  s tem for loopom sem sel cez vsako vrstico, s spodnjim pa se cez vsak x ali pa presledek v tej vrstici - grem cez cel list labirinta
             for col_index,col in enumerate(row):
-                # tako dobimo x in y koordinato
+                # tako dobim x in y koordinato
                 x = col_index * TILESIZE
                 y = row_index * TILESIZE
                 # zdaj ima cel svet neko doloceno pozicijo
                 # zdaj lahko recem, da ce je ena enota sveta dolocena kot x, naj bo to stena labirinta
                 if col == 'w':
                     Tile((x,y),[self.visible_sprites,self.obstacle_sprites])
-                # zdaj dodamo se igralca
+                # zdaj dodam se igralca
                 if col == 'p':
                     self.player = Player((x,y),[self.visible_sprites],self.obstacle_sprites,self.portal_sprites)# <--
                 # dodati moram se sprite, ki bo, ko se ga igralec dotakne, koncal igro
@@ -46,12 +46,12 @@ class Level:
 
     def run(self):
         # hocem, da se igra obnavlja in prikazuje
-        # s tem pokazemo sprite 
+        # s tem pokazem sprite 
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
         
 
-# dodamo se en class, za to da dobimo funkcionalno kamero, ki sledi liku igralca
+# dodam se en class, za to da dobim funkcionalno kamero, ki sledi liku igralca
 # CameraGroup : pomeni da bo ta class odgovoren za kamero
 # YSort : pomeni, da bomo vse sprite sortirali po Y koordinati in tako bomo lahko dodali overlap --> lazno globino
 # kako kamera deluje: deluje znotraj funkcije custom_draw, v bistvu namesto da isem sprite znotraj njegovega rectangla, lahko dodam offset in tako omogocim premik
@@ -71,7 +71,7 @@ class YSortCameraGroup(pygame.sprite.Group):
         self.half_width = self.display_surface.get_size()[0] // 2
         self.half_height = self.display_surface.get_size()[1] // 2
 
-    # dodamo se en argument, player, tako lahko dobim njegovo pozicijo
+    # dodam se en argument, player, tako lahko dobim njegovo pozicijo
     def custom_draw(self, player):
         
         # s to kodo dobimo 'offset' (zamik)

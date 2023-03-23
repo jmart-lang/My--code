@@ -46,7 +46,7 @@ selected_level = None
 
 # to zanko bo program ponavljal, dokler igralec ne izbere tezavnosti
 while not selected_level:
-    # to samo projecira sliko ozadja, gokler tece zanka
+    # to samo projecira sliko ozadja, dokler tece zanka
     screen.blit(background_image, (0, 0))
     screen.blit(button1_image, (150, 225))
     screen.blit(button2_image, (150, 325))

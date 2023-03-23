@@ -4,7 +4,6 @@
 
 # Imports
 import random
-import time
 from colorama import init
 from colorama import Fore, Back, Style
 from inp import height, width

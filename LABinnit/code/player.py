@@ -15,18 +15,18 @@ image_path4 = os.path.join(script_dir, '..', 'graphics', 'test',
 script_dir2 = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir2, '..', 'code', 'endcredits.py')
 
-# ustvarimo nov class
+# ustvarim nov class
 # ta program sem skopiral iz tile.py, vse kar rabim narediti je samo spremeniti ime classa in pa popraviti nekaj manjsih zadev
 
 # spremenil sem ime classa v Player
 class Player(pygame.sprite.Sprite):
-    # pos = rabimo pozicijo vseh spritov
+    # pos = rabim pozicijo vseh spritov
     # groups = del katere skupine je sprite
     # obstacle_sprites = vedeti je treba pozicije ovir, ce hocem, da collisons delujejo
     def __init__(self,pos,groups,obstacle_sprites,portal_sprites): #  <--
         # zastartamo clas v vrstici 5 
         super().__init__(groups)
-        # zato ker imamo tukaj zgoraj znotraj oklepaja groups, lahko uporabimo spodnja izraza, saj sta nujna za vsak sprite
+        # zato ker je tukaj zgoraj znotraj oklepaja groups, lahko uporabim spodnja izraza, saj sta nujna za vsak sprite
         # tukaj hocem naloziti sliko, zato moram uporabiti pygame.image.load, ter dodati kje se nahaja in jo pretvoriti v obliko, 
         ## ki jo zaslon lahko prikaze
         # tukaj sem moral spremeniti pot do datoteke
@@ -34,13 +34,13 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft = pos)
         self.hitbox = self.rect.inflate(0,0)
 
-        # dobili smo program, ki nam bo na zaslonu prikazoval igralca oz. njegov lik
+        # dobil sem program, ki nam bo na zaslonu prikazoval igralca oz. njegov lik
 
         # da mi 2 vektorja, ki sta navadno 0,0
         # z pritiskom na tipkovnico se bo ta vrednost spreminjala
-        # rabimo vnos tipkovnice
+        # rabim vnos tipkovnice
         self.direction = pygame.math.Vector2()
-        # damo mu se hitrost, s katero lahko pomnozimo premik in tako dobimo stalno giabnje
+        # dam mu se hitrost, s katero lahko pomnozimo premik in tako dobimo stalno giabnje
         self.speed = 5
 
         self.obstacle_sprites = obstacle_sprites
@@ -57,7 +57,7 @@ class Player(pygame.sprite.Sprite):
         elif keys[pygame.K_DOWN]:
             self.direction.y = 1
             self.image = pygame.image.load(image_path4).convert_alpha()
-        # ce ne dodamo tega else, bi se lik premikal naprej
+        # ce ne dodam tega else, bi se lik premikal naprej
         else:
             self.direction.y = 0
 
@@ -70,17 +70,17 @@ class Player(pygame.sprite.Sprite):
         elif keys[pygame.K_LEFT]:
             self.direction.x = -1
             self.image = pygame.image.load(image_path2).convert_alpha()
-        # ce ne dodamo tega else, bi se lik premikal naprej
+        # ce ne dodam tega else, bi se lik premikal naprej
         else:
             self.direction.x = 0
 
     # ustvarim nacin premikanja
     def move(self,speed):
-        # to dodamo, da, ce se premikamo diagonalno, da se hitrosti ne sestevajo ampak vedno ostanejo enae
+        # to dodam, da, ce se lik premika diagonalno, da se hitrosti ne sestevajo ampak vedno ostanejo enake
         if self.direction.magnitude() != 0:
             self.direction = self.direction.normalize()
         
-        # tukaj moramo dolociti horizontalno in vertikalno gibanje
+        # tukaj moram dolociti horizontalno in vertikalno gibanje
         self.hitbox.x += self.direction.x * speed
         # ko premaknem lik igralca hocem preveriti horizontalne trke
         self.collision('horizontal')
@@ -91,13 +91,13 @@ class Player(pygame.sprite.Sprite):
         self.rect.center = self.hitbox.center
     
     # ustvarim novo funkcijo, ki bo obravnavala 'trke' med spriti
-    # damo smer, ki je lahko vertikalna ali horizontalna
+    # dam smer, ki je lahko vertikalna ali horizontalna
 
     def collision(self,direction):
         # ce je smer horizontalna:
         if direction == 'horizontal':
             for sprite in self.obstacle_sprites:
-                # preverimo, ce sprite igralca trci ob sprite ovire
+                # preverim, ce sprite igralca trci ob sprite ovire
                 if sprite.hitbox.colliderect(self.hitbox):
                     # ne vem ali trci na desni ali na levi strani
                     # predvidevam, da lahko trci z oviro samo v smeri, v katero se premika
@@ -117,7 +117,7 @@ class Player(pygame.sprite.Sprite):
         # ce je smer vertikalna
         if direction == 'vertical':
             for sprite in self.obstacle_sprites:
-                # preverimo, ce sprite igralca trci ob sprite ovire
+                # preverim, ce sprite igralca trci ob sprite ovire
                 if sprite.hitbox.colliderect(self.hitbox):
                     # ne vem ali trci na zgornji ali na spodnji strani
                     # predvidevam, da lahko trci z oviro samo v smeri, v katero se premika
