@@ -3,7 +3,7 @@ from settings import *
 #vpeljemo class Level iz level.py to pomeni da ga lahko uporabljamo tukaj
 from level import Level
 #vpeljem subprocess, da lahko odpiram druge datoteke, med tem ko ena ze tece
-import subprocess 
+import subprocess
 
 colour = (209, 142, 12)
 
@@ -24,7 +24,7 @@ class Game:
 	
 	def run(self):
 		#zazenem inp datoteko, to mi omogoci, da izberem tezavnost igrice
-		subprocess.run(['inp'], shell=True)
+		subprocess.run(['inp.py'], shell=True)
 
 		#event loop: preverja, ce se je igra zaprla
 		while True:
@@ -35,7 +35,6 @@ class Game:
 
 			#zaslon nastavim na izbrano barvo
 			self.screen.fill(colour)
-
 			#zazenem class level v tem loopu
 			self.level.run()
 			#posodablja zaslon

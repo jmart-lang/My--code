@@ -1,4 +1,3 @@
-import sys
 import pygame
 import os
 
@@ -17,6 +16,9 @@ image_path3 = os.path.join(script_dir3, '..', 'graphics', 'test',
 script_dir4 = os.path.dirname(os.path.abspath(__file__))
 image_path4 = os.path.join(script_dir4, '..', 'graphics', 'test',
 'gumb3.png')
+
+script_dir5 = os.path.dirname(os.path.abspath(__file__))
+music_path = os.path.join(script_dir5, '..', 'music', 'zacetek.wav',)
 
 # zacne pygame
 pygame.init()
@@ -43,6 +45,11 @@ difficulty_levels = {"EASY": (20, 20), "MEDIUM": (40, 40), "LEGENDARY": (100, 10
 
 # ponastavi, da ni izbran noben level
 selected_level = None
+
+#hocem glasbo, zato sem se odlocil dodati se en scrpt
+pygame.mixer.init()
+pygame.mixer.music.load(music_path)
+pygame.mixer.music.play(-1)
 
 # to zanko bo program ponavljal, dokler igralec ne izbere tezavnosti
 while not selected_level:
@@ -74,6 +81,8 @@ while not selected_level:
 
     # posodablja zaslom
     pygame.display.update()
+
+
 
 # to je zelo pomembno:
 # to nastevi visino(height) in sirino(width), dve spremenljivki, glede na izbrano tezavnost

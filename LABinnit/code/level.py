@@ -2,7 +2,7 @@ import pygame
 from settings import *
 from labyrinth import *
 from tile import Tile  
-from player import Player
+from player import *
 from portal import Portal
 #from floor import Floor
 
@@ -16,7 +16,6 @@ class Level:
         self.visible_sprites = YSortCameraGroup()
         self.obstacle_sprites = pygame.sprite.Group()
         self.portal_sprites = pygame.sprite.Group()
-
 
         # vzpostavitev sprita
         self.create_map()

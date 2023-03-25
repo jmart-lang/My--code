@@ -14,9 +14,15 @@ image_path4 = os.path.join(script_dir, '..', 'graphics', 'test',
 'Theseus_down.png')
 script_dir2 = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir2, '..', 'code', 'endcredits.py')
+script_dir3 = os.path.dirname(os.path.abspath(__file__))
+music_path = os.path.join(script_dir3, '..', 'music', 'labirint.wav',)
 
 # ustvarim nov class
 # ta program sem skopiral iz tile.py, vse kar rabim narediti je samo spremeniti ime classa in pa popraviti nekaj manjsih zadev
+
+pygame.init()
+pygame.mixer.music.load(music_path)
+pygame.mixer.music.play(-1)
 
 # spremenil sem ime classa v Player
 class Player(pygame.sprite.Sprite):
@@ -130,6 +136,7 @@ class Player(pygame.sprite.Sprite):
             # tuki naprej
             for sprite in self.portal_sprites:
                         if sprite.hitbox.colliderect(self.hitbox):
+                            pygame.mixer.music.stop()
                             pygame.display.quit() # zaprem pygame display window
                             os.system(file_path) # zazenem datoteko endcredits.py
                             quit()

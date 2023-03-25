@@ -6,17 +6,28 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(script_dir, '..', 'graphics', 'test',
 'background_2.png')
+
 script_dir2 = os.path.dirname(os.path.abspath(__file__))
 image_path2 = os.path.join(script_dir2, '..', 'graphics', 'test',
 'button.png')
+
 script_dir3 = os.path.dirname(os.path.abspath(__file__))
 image_path3 = os.path.join(script_dir3, '..', 'graphics', 'test',
 'button2.png')
+
 script_dir4 = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir4, '..', 'code', 'main.py',)
 
+script_dir5 = os.path.dirname(os.path.abspath(__file__))
+music_path = os.path.join(script_dir5, '..', 'music', 'konec.wav',)
+
 # zazene pygame
 pygame.init()
+
+#za glasbo hocem da se predvaja ves cas
+pygame.mixer.init()
+pygame.mixer.music.load(music_path)
+pygame.mixer.music.play(-1)
 
 # s tem sem dolocil barve, ki jih hocem, oziroma jih bom rabil za naprej, dolocil sem jih kot spremenljivke, da mi jih ne bi bilo treba vedno znova dolocati
 BLACK = (0, 0, 0)
