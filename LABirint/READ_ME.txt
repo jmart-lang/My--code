@@ -1,60 +1,61 @@
---------------------------------------------------------------------------------------------------------------------------------
-
-Vidim da si nalozil mojo igro, tako da imam zate samo se nekaj navodil:
-
-- ta igira potrebuje python IDLE, ki ga lahko nalozis na naslednji spletni strani: https://www.python.org/downloads/
-- potrebuje tudi knjiznico pygame, kar pomeni da jo moras naloziti
-- nalozis jo tako, da v terminal vtipkas naslednji ukaz: pip install pygame
-- terminal odpres tako, da pritisnes tipki Win + R in v okence, ki se pojavi vtipkas cmd in pritisnes tipko Enter
-- ko to koncas, imas v folderju LABinnit bliznjico LABirint, ki jo lahko potegnes na namizje
-- ko dvakrat kliknes na ikono se bo igra odprla
-
---------------------------------------------------------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------------------------------------------------
+ 
+Vidim da si naložil mojo igro, tako da imam zate samo še nekaj navodil:
+ 
+- ta igra potrebuje python IDLE, ki ga lahko naložiš na naslednji spletni strani: https://www.python.org/downloads/
+- potrebuje tudi knjižnico pygame, kar pomeni da jo moraš naložiti
+- naložiš jo tako, da v terminal vtipkaš naslednji ukaz: pip install pygame
+- terminal odpreš tako, da pritisneš tipki Win + R in v okence, ki se pojavi vtipkaš cmd in pritisneš tipko Enter
+- ko to končaš, imaš v folderju LABirint bližnjico LABirint, ki jo lahko potegneš na namizje
+- ko dvakrat klikneš na ikono se bo igra odprla
+ 
+------------------------------------------------------------------------------------------------------------------------
+ 
 Osnovni napotki za igro:
-- premikas se lahko z uporabo awsd tipk
-	- a = levo
-	- w = gor
-	- s = dol
-	- d = desno
-
-- ce izberes srednjo ali pa legendary tezavnost, bi lahko generiranje labirinta vzelo malo vec casa
+- premikaš se lahko z uporabo awsd tipk
+- a = levo
+- w = gor
+- s = dol
+- d = desno
+- če izbereš srednjo ali pa težavnost »legendary«, bi lahko ustvarjanje labirinta vzelo malo več časa
 - zaradi zgornjih razlogov prosim za potrpljenje
-- ce po dolgotrajnem cakanju igra se kar ne generira labirinta gumb z izbrano tezavnostjo pritisni veckrat
-- tvoj cilj je, da pobegnes iz labirinta skozi portal, ki se nahaja nekje ob steni labirinta 
-- po koncani igri bos dobil moznost za ponovno igranje, ali pa da igro koncas. izberi, kar hoces
-- in se glavna stvar: uzivaj!
-
---------------------------------------------------------------------------------------------------------------------------------
+- če po dolgotrajnem čakanju igra še kar ne ustvari labirinta gumb z izbrano težavnostjo pritisni večkrat
+- tvoj cilj je, da pobegneš iz labirinta skozi portal, ki se nahaja nekje ob steni labirinta
+- po končani igri bos dobil možnost za ponovno igranje, ali pa da igro končaš. izberi, kar hočeš
+- in še glavna stvar: uživaj!
+ 
+------------------------------------------------------------------------------------------------------------------------
 
 Moji viri pri programiranju:
-- https://i.stack.imgur.com/PBde2.gif 
+- anonimni avtor, Imgur (online) [uporabljeno 6. 2. 2023] dostopno na
+https://i.stack.imgur.com/PBde2.gif 
 	- navdih za moj avtorski lik igralca
-- https://www.youtube.com/watch?v=cwWi05Icpw0
-	- tutorial, s pomocjo katerega sem igrico naredil
-- https://github.com/clear-code-projects/SimpleZelda
-	- github stran, kjer je zbrane vsa koda, ki je bila napisana v vodicu (ni moja koda)
-- https://medium.com/swlh/fun-with-python-1-maze-generator-931639b4fb7e
-	- razlaga programa za nakljucno generiranje labirinta
-- https://github.com/OrWestSide/python-scripts/blob/master/maze.py
-	- program za nakljucno generiran labirint ()
-- Microsoft Bing search engine
-	- kako narediti endcredits.py in inp.py --> samo nacin, ne koda sama
-- OpenAI. (2021). GPT-3.5 [Computer software]. Pridobljeno s strani https://openai.com/
-	- razlaga delov kode, ki jih nisem razumel, kako lahko izboljsam kodo
+- Clear Code, YouTube (online) [nazadnje uporabljeno 11. 3. 2023] dostopno na
+https://www.youtube.com/watch?v=cwWi05Icpw0
+	- vodič, s pomočjo katerega sem igrico naredil
+- clear-code-projects, GitHub (online) [nisem dostopal, je pa del vodiča] dostopno na
+https://github.com/clear-code-projects/SimpleZelda
+	- github stran, kjer je zbrane vsa koda, ki je bila napisana v vodiču(ni moja koda)
+- ZEKAI, Orestis, Medium (online) [uporabljeno 9.3.2023] dostopno na
+https://medium.com/swlh/fun-with-python-1-maze-generator-931639b4fb7e
+	- razlaga programa za naključno ustvarjanje labirinta
+- ZEKAI, Orestis, GitHub (online) [uporabljeno 9. 3. 2023] dostopno na
+https://github.com/OrWestSide/python-scripts/blob/master/maze.py
+	- program za naključno ustvarjen labirint
+- OpenAI, GPT-3.5 (programska oprema) [nazadnje uporabljeno 16. 3. 2023] dostopno na  https://openai.com/
+- Pixilart: za uporabo prosto umetniško orodje za risanje (online) [nazadnje uporabljeno 22. 3. 2023] dostopno na https://www.pixilart.com
+	- https://www.pixilart.com/mart2 <-- tu je povezava do mojega profila na tej spletni strani
+	- tam lahko vidite vse sprite, ki sem jih narisal in tudi postopke njihovega nastanka
+- Družba Microsoft,  Visual Studio Code (Verzija 1.64.0), (prog. oprema) [nazadnje uporabljeno 24. 3. 2023] možnost naložiti program imate na https://code.visualstudio.com/
+- Pixel-boy, Itch.io, Ninja Adventure Asset Pack (zbirka sredstev za razvoj videoiger) [nazadnje uporabljeno 24.3.2023] dostopno na https://pixel-boy.itch.io/ninja-adventure-asset-pack
+	- ta zbirka sredstev je sicer objavljena pod licenco CCO, kar pomeni, da glasbo, objavljeno v njej lahko uporablja kdorkoli brez citiranja avtorja ampak se mi zdi prav, da mu dam nekaj zaslug
 
---------------------------------------------------------------------------------------------------------------------------------
-
-Spletna stran s katero sem si pomagal pri dizajniranju graficne podobe moje igrice
-- https://www.pixilart.com/mart2
-	- to je moj profil, tam lahko vidite vse sprite, ki sem jih narisal in tudi timelapse njihovega nastanka
-
---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 
 Mentorica projektne naloge: prof. Helena Starc Grlj
 Avtor projektne naloge: Jurij Martinčič, 2D
 
---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 
                        .,,uod8B8bou,,.
               ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.
@@ -87,4 +88,4 @@ Avtor projektne naloge: Jurij Martinčič, 2D
                     `!9899fT|!^"'
                       `!^"'
 
---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
